@@ -1,0 +1,146 @@
+.form-title {
+  transition: opacity 0.7s ease;
+  opacity: 1;
+  width: 100%;
+}
+
+.form-title.fade-in {
+  opacity: 1;
+}
+
+.form-title.fade-out {
+  opacity: 0;
+}
+
+.form-container{
+  width: 55%;
+}
+
+.form-textarea{
+  margin-top: 40px;
+}
+
+.style-switch {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.switch-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  color: #aaa;
+  transition: all 0.3s ease;
+}
+
+.switch-btn.empatico.active,
+.switch-btn.empatico:hover {
+  border-color: #5ecfff;
+  color: #5ecfff;
+}
+
+.switch-btn.sabio.active,
+.switch-btn.sabio:hover {
+  border-color: #fdd835;
+  color: #fdd835;
+}
+
+.switch-btn.motivacional.active,
+.switch-btn.motivacional:hover {
+  border-color: #ff7fe5;
+  color: #ff7fe5;
+}
+
+.switch-btn.racional.active,
+.switch-btn.racional:hover {
+  border-color: #482ed8; /* Azul más serio */
+  color: #482ed8;
+}
+
+.switch-btn.directo.active,
+.switch-btn.directo:hover {
+  border-color: #ef5350; /* Rojo claro, directo */
+  color: #ef5350;
+}
+
+
+.submit-button-wrapper {
+  margin-top: 35px; /* separación desde los botones de estilo */
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilo base del botón */
+.submit-btn {
+  padding: 12px 28px;
+  font-weight: 700;
+  border-radius: 25px;
+  border: 2.5px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+  color: #aaa;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Colores según estilo seleccionado */
+.submit-btn.empatico {
+  border-color: #5ecfff;
+  color: #5ecfff;
+}
+
+.submit-btn.empatico:hover {
+  background-color: #5ecfff;
+  color: #070314;
+}
+
+.submit-btn.sabio {
+  border-color: #fdd835;
+  color: #fdd835;
+}
+
+.submit-btn.sabio:hover {
+  background-color: #fdd835;
+  color: #070314;
+}
+
+.submit-btn.motivacional {
+  border-color: #ff7fe5;
+  color: #ff7fe5;
+}
+
+.submit-btn.motivacional:hover {
+  background-color: #ff7fe5;
+  color: #070314;
+}
+
+.submit-btn.racional {
+  border-color: #482ed8;
+  color: #482ed8;
+}
+
+.submit-btn.racional:hover {
+  background-color: #482ed8;
+  color: #070314;
+}
+
+.submit-btn.directo {
+  border-color: #ef5350;
+  color: #ef5350;
+}
+
+.submit-btn.directo:hover {
+  background-color: #ef5350;
+  color: #070314;
+}
+
+@media (max-width: 768px){
+  .form-container{
+    padding: 5px;   
+    width: auto;
+  }
+}

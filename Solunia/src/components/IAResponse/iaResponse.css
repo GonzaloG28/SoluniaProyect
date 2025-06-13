@@ -1,0 +1,56 @@
+.ia-loading {
+  font-style: italic;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.ia-response-container {
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Estilos por tipo */
+.ia-response-container.sabio {
+  border: 2px solid gold;
+}
+
+.ia-response-container.empatico {
+  border: 2px solid #5ecfff;
+}
+
+.ia-response-container.motivacional {
+  border: 2px solid #ff7fe5;
+}
+
+.ia-response-container.racional{
+  border: 2px solid #482ed8;
+}
+
+.ia-response-container.directo{
+  border: 2px solid #ef5350;
+}
+
+.ia-response-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.ia-response-text {
+  white-space: pre-line;
+  line-height: 1.6;
+}

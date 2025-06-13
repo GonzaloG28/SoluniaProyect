@@ -1,0 +1,462 @@
+.header {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px 20px 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bouncing-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  height: 70px;
+}
+
+.bouncing-ball {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-top: 15px;
+  animation: bounce 1.2s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.521);
+  position: relative;
+  z-index: 2;
+  transition: background-color 0.6s ease;
+}
+
+
+.bouncing-ball.empatico {
+  background-color: #5ecfff;
+}
+
+.bouncing-ball.sabio {
+  background-color: #fdd835;
+}
+
+.bouncing-ball.motivacional {
+  background-color: #ff7fe5;
+}
+
+.bouncing-ball.racional{
+  background-color: #482ed8;
+}
+
+.bouncing-ball.directo{
+  background-color: #ef5350;
+}
+
+.bouncing-ball.expand {
+  animation: expand-bounce 3.5s ease forwards;
+}
+
+@keyframes expand-bounce {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.6);
+  }
+  60% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nav-left,
+.nav-right {
+  position: absolute;
+  top: 130px;
+  display: flex;
+  gap: 100px;
+  width: auto;
+}
+
+.nav-left {
+  left: 100px;
+}
+
+.nav-right {
+  right: 100px;
+}
+
+.nav-left a,
+.nav-right a {
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  color: #fdd835;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: width 0.5s ease; 
+}
+
+.active-link::after {
+  width: 100%;
+}
+
+/* Colores personalizados para cada estilo usando currentColor */
+.nav-link.empatico {
+  color: #5ecfff;
+}
+
+.nav-link.sabio {
+  color: #fdd835;
+}
+
+.nav-link.motivacional {
+  color: #ff7fe5;
+}
+
+.nav-link.racional{
+  color: #482ed8;
+}
+
+.nav-link.directo{
+  color: #ef5350;
+}
+
+.header-top-right {
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  display: flex;
+  gap: 20px;
+  z-index: 3;
+}
+
+.btn {
+  background: transparent;
+  border: 1.5px solid #fdd835;
+  color: #fdd835;
+  padding: 5px 12px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fdd835;
+  color: #070314;
+}
+
+.nav-left a.empatico,
+.nav-right a.empatico {
+  color: #5ecfff;
+}
+
+.nav-left a.sabio,
+.nav-right a.sabio {
+  color: #fdd835;
+}
+
+.nav-left a.motivacional,
+.nav-right a.motivacional {
+  color: #ff7fe5;
+}
+
+.nav-left a.racional,
+.nav-right a.racional {
+  color: #482ed8;
+}
+
+.nav-left a.directo,
+.nav-right a.directo{
+  color: #ef5350;
+}
+
+.nav-left a.empatico:hover,
+.nav-right a.empatico:hover {
+  color: #3abbe0;
+}
+
+.nav-left a.sabio:hover,
+.nav-right a.sabio:hover {
+  color: #e6c300;
+}
+
+.nav-left a.motivacional:hover,
+.nav-right a.motivacional:hover {
+  color: #ff4dd2;
+}
+
+.nav-left a.racional:hover,
+.nav-right a.racional:hover{
+  color: #2000d2;
+}
+
+.nav-left a.directo:hover,
+.nav-right a.directo:hover {
+  color: #e40400;
+}
+
+/* Cambia botones según el estilo */
+.btn.empatico {
+  border-color: #5ecfff;
+  color: #5ecfff;
+}
+
+.btn.empatico:hover {
+  background-color: #5ecfff;
+  color: #070314;
+}
+
+.btn.sabio {
+  border-color: #fdd835;
+  color: #fdd835;
+}
+
+.btn.sabio:hover {
+  background-color: #fdd835;
+  color: #070314;
+}
+
+.btn.motivacional {
+  border-color: #ff7fe5;
+  color: #ff7fe5;
+}
+
+.btn.motivacional:hover {
+  background-color: #ff7fe5;
+  color: #070314;
+}
+
+.btn.racional {
+  border-color: #482ed8;
+  color: #482ed8;
+}
+
+.btn.racional:hover {
+  background-color: #482ed8;
+  color: #070314;
+}
+
+.btn.directo{
+  border-color: #ef5350;
+  color: #ef5350;
+}
+
+.btn.directo:hover{
+  background-color: #ef5350;
+  color: #070314;
+}
+/* Mostrar el botón ☰ solo en móviles */
+
+ .mobile-toggle {
+  display: none;
+}
+
+
+/* Esconder elementos solo en móviles */
+.desktop-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+    background-color: rgba(15, 15, 35, 0.989);
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+    position: static;
+    margin-bottom: 30px;
+  }
+
+  .nav-left a,
+  .nav-right a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+
+  .header {
+    margin-left: 230px; /* deja espacio al costado del nav */
+    max-width: calc(100vw - 230px); /* usa el resto del ancho disponible */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra todo horizontalmente */
+    text-align: center;
+  }
+
+  .header-top {
+    justify-content: center;
+  }
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+  .header {
+    padding: 40px 10px 10px 10px;
+  }
+
+
+  .title {
+    font-size: 2rem;
+    z-index: 2;
+  }
+
+  .header-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+ .mobile-toggle {
+    position: absolute; /* clave para que no empuje al título */
+    right: 20px;
+    top: 10px;
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+    flex-direction: column; /* ← Esto es lo importante */
+    gap: 20px;
+    margin-top: 20px;
+    align-items: center;
+  }
+
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(15, 15, 35, 0.989); /* Fondo oscuro */
+    display: none;
+    overflow-y: auto;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-container.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* espacio entre nav-left, nav-right y nav-auth */
+}
+
+  .nav-left,
+  .nav-right,
+  .nav-auth {
+    flex-direction: column;
+    gap: 50px;
+    width: auto;
+    align-items: center;
+  }
+  .nav-left,
+  .nav-right {
+  flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    position: static;
+}
+
+  .nav-left a,
+  .nav-right a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    width: 30%;
+    padding: 10px 0;
+}
+
+  .nav-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .header-top-right {
+    position: static;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 7px 10px;
+  }
+
+  .bouncing-wrapper {
+    height: 50px;
+  }
+}

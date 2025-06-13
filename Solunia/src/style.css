@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+*{
+font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body{
+  overflow-x: hidden;
+  background: radial-gradient(circle at center, rgb(19, 10, 36), rgb(0, 0, 0));
+}
+
+.App {
+  text-align: center;
+  color: white;
+}
+
+@media (min-width: 769px) {
+
+ .main-content {
+    margin-left: 220px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: calc(100vw - 220px); /* asegura que no se pase del viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+}

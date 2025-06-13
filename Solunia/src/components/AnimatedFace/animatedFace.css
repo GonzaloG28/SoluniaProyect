@@ -1,0 +1,148 @@
+.face-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #0e0b1d;
+  margin: auto;
+  position: relative;
+  transition: background-color 0.5s ease;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.199);
+}
+
+.eyes {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 60px;
+  width: 65%;
+  padding: 0 35px;
+}
+
+.eye {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.eye::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  animation: pupilMove 4s infinite ease-in-out;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+@keyframes pupilMove {
+  0%, 100% {
+    top: 9px;
+    left: 9px;
+  }
+  20% {
+    top: 7px;
+    left: 11px;
+  }
+  40% {
+    top: 11px;
+    left: 7px;
+  }
+  60% {
+    top: 10px;
+    left: 10px;
+  }
+  80% {
+    top: 8px;
+    left: 12px;
+  }
+}
+
+.eye-shock::after {
+  animation: pupilShock 1s ease;
+}
+
+@keyframes pupilShock {
+  0% {
+    transform: scale(1.2) translate(3px, -3px);
+  }
+  50% {
+    transform: scale(0.8) translate(-2px, 2px);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+/* Cejas */
+.eyebrow {
+  width: 30px;
+  height: 7px;
+  background: black;
+  position: absolute;
+  top: 35px;
+  border-radius: 3px;
+  transition: transform 0.4s ease;
+}
+
+.left-brow {
+  left: 40px;
+}
+
+.right-brow {
+  right: 40px;
+}
+
+/* Emociones con cejas */
+.feliz .left-brow,
+.feliz .right-brow {
+  transform: rotate(15deg);
+}
+
+.triste .left-brow,
+.triste .right-brow {
+  transform: rotate(-15deg);
+  top: 40px;
+}
+
+.enojo .left-brow {
+  transform: rotate(-25deg);
+  top: 40px;
+}
+
+.enojo .right-brow {
+  transform: rotate(25deg);
+  top: 40px;
+}
+
+.sorprendido .left-brow,
+.sorprendido .right-brow {
+  top: 30px;
+}
+
+/* Estilos por modo */
+.face-container.empatico {
+  background-color: #5ecfff;
+}
+
+.face-container.sabio {
+  background-color: #dfc21f;
+}
+
+.face-container.motivacional {
+  background-color: #bd55a8;
+}
+
+.face-container.racional{
+  background-color: #482ed8;
+}
+
+.face-container.directo{
+  background-color: #e22c28;
+}

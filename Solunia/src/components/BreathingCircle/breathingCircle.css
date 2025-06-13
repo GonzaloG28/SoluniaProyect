@@ -1,0 +1,234 @@
+.breathing-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+.breathing-box {
+  width: 200px;
+  height: 200px;
+  aspect-ratio: 1/1;
+  border: 4px solid white;
+  position: relative;
+  margin: 50px auto 40px auto;
+  box-sizing: border-box;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.mode-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  min-height: 200px;
+  margin: 0 auto;
+}
+
+.mode-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.6s ease;
+  opacity: 0;
+  display: none;
+}
+
+.mode-view.visible {
+  opacity: 1;
+  display: block;
+  position: relative;
+}
+
+
+
+.breathing-ball {
+  width: 30px;
+  height: 30px;
+  background: white;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  position: absolute;
+}
+
+/* Animaciones por fase: se ajustan dentro del cuadrado */
+.breathing-ball.inhale {
+  transform: translate(160px, 0);
+}
+.breathing-ball.aguanta {
+  transform: translate(160px, 160px);
+}
+.breathing-ball.exhale {
+  transform: translate(0, 160px);
+}
+.breathing-ball.mantenlo {
+  transform: translate(0, 0);
+}
+
+.simple-breathing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.simple-ball {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  animation-duration: 4s; /* Puede cambiar dinámicamente según inhale/exhale */
+  animation-timing-function: ease-in-out;
+}
+
+.inhale {
+  animation-name: inhaleAnim;
+}
+
+.exhale {
+  animation-name: exhaleAnim;
+}
+
+@keyframes inhaleAnim {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.6);
+  }
+}
+
+@keyframes exhaleAnim {
+  0% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.phase-text {
+  color: white;
+  font-size: '28px'; 
+  margin-top: '10px';
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.phase-text.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.breathing-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin: 40px auto 30px auto;
+  
+}
+
+
+.control-group label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.control-group button {
+  margin: 3px;
+  padding: 6px 10px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  &&:hover {
+          background-color: white;
+          color: black;
+        }
+}
+
+.button-group {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 40px;
+}
+
+.button-s{
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #aaa;
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #aaa;
+  transition: all 0.3s ease;
+}
+
+.button-s:hover{
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+}
+
+.timer-display {
+  margin-top: 10px;
+}
+
+/* Responsive: controles en columna en móviles */
+@media (max-width: 600px) {
+
+  .breathing-box-container{
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .breathing-controls {
+    display: flex;
+    gap: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .phase-text.visible{
+    width: 100%;
+    margin: 0;
+    padding-top: 50px;
+  }
+
+  .control-group{
+  margin-top: 10px;
+
+}
+
+  .button-group{
+    display: block;
+  }
+
+  .breathing-box{
+    width: 150px;
+    height: 150px;
+  }
+
+  .breathing-ball.inhale {
+  transform: translate(110px, 0);
+}
+.breathing-ball.aguanta {
+  transform: translate(110px, 110px);
+}
+.breathing-ball.exhale {
+  transform: translate(0, 110px);
+}
+.breathing-ball.mantenlo {
+  transform: translate(0, 0);
+}
+
+}
