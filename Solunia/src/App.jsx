@@ -30,8 +30,8 @@ function App() {
                 <Route path="/cursos" element={<CourseSection style={style} />} />
                 <Route path="/respiracion" element={<BreathingCircle />} />
             </Routes>
-    </main>
-  </div>
+                </main>
+            </div>
       </Router>
   )
 }

@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
+import ProtectedLink from '../ProtectedLink/ProtectedLink';
+import AuthModal from '../AuthModal/AuthModal';
 import './header.css';
 
 const Header = ({ style }) => {
   const [animateBall, setAnimateBall] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMode, setModalMode] = useState("login")
   const closeMenu = () => setMenuOpen(false);
   const location = useLocation();
 
@@ -17,6 +21,11 @@ const Header = ({ style }) => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const abrirModal = (modo) => {
+    setModalMode(modo);     
+    setShowModal(true);    
   };
 
   return (
@@ -35,8 +44,10 @@ const Header = ({ style }) => {
           )}
 
         <div className="header-top-right desktop-only">
-          <button className={`btn ${style}`}>Registrarse</button>
-          <button className={`btn ${style}`}>Iniciar Sesion</button>
+          <button onClick={() => abrirModal("register")} className={`btn ${style}`}>Registrarse</button>
+          <button onClick={() => abrirModal("login")} className={`btn ${style}`}>Iniciar Sesion</button>
+
+          <AuthModal isOpen={showModal} onClose={() => setShowModal(false)} mode={modalMode}/>
         </div>
         
       </div>
@@ -55,16 +66,21 @@ const Header = ({ style }) => {
 
         <div className="nav-left">
           <Link to="/" className={`nav-link ${style} ${location.pathname === '/' ? 'active-link' : ''}`} onClick={closeMenu}>INICIO</Link>
+          <ProtectedLink>
           <Link to="/respiracion" className={`nav-link ${style} ${location.pathname === '/respiracion' ? 'active-link' : ''}`} onClick={closeMenu}>PULSO</Link>
+          </ProtectedLink>
         </div>
         <div className="nav-right">
+          <ProtectedLink>
           <Link to="/cursos" className={`nav-link ${style} ${location.pathname === '/cursos' ? 'active-link' : ''}`} onClick={closeMenu}>CURSOS</Link>
+          </ProtectedLink>
           <Link to="/" className={style} onClick={closeMenu}>SOON</Link>
         </div>
          
         <div className="nav-auth mobile-only">
-          <button className={`btn ${style}`}>Registrarse</button>
-          <button className={`btn ${style}`}>Iniciar Sesion</button>
+          <button onClick={() => abrirModal("register")} className={`btn ${style}`}>Registrarse</button>
+          <button onClick={() => abrirModal("login")} className={`btn ${style}`}>Iniciar Sesion</button>
+          <AuthModal isOpen={showModal} onClose={() => setShowModal(false)} mode={modalMode}/>
         </div>
       </nav>
       
