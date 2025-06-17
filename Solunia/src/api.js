@@ -1,7 +1,8 @@
 import OpenAI from "openai";
+import envs from "./config/envs.js"
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: envs.API_KEY,
   dangerouslyAllowBrowser: true, 
 });
 
