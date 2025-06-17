@@ -23,7 +23,7 @@ function App() {
                   element={
                     <>
                       <EmotionalForm setStyle={setStyle} />
-                      <SugerenciasForm />
+                      <SugerenciasForm/>
                     </>
                   }
                 />
