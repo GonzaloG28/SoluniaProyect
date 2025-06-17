@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import EmotionalForm from './components/EmotionalForm/EmotionalForm'
-import SugerenciasForm from './components/sugerenciasForm/SugerenciasForm';
+import EmotionalForm from './components/EmotionalForm/EmotionalForm';
+import SugerenciasForm from './components/SugerenciasForm/SugerenciasForm';
 import Header from './components/Header/Header';
 import BreathingCircle from './components/BreathingCircle/BreathingCircle';
 import CourseSection from './components/CourseSection/CourseSection';
