@@ -1,8 +1,9 @@
 import OpenAI from "openai";
-import envs from "./config/envs.js"
+
+const apiKey = import.meta.env.VITE_API_KEY;
 
 const openai = new OpenAI({
-  apiKey: envs.API_KEY,
+  apiKey: apiKey,
   dangerouslyAllowBrowser: true, 
 });
 
