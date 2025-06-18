@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import ProtectedLink from '../ProtectedLink/ProtectedLink';
-import AuthModal from '../AuthModal/AuthModal';
+import Login from '../RegisterAndLogin/Login';
+import Register from '../RegisterAndLogin/Register';
 import './header.css';
 
 const Header = ({ style }) => {
   const [animateBall, setAnimateBall] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [modalMode, setModalMode] = useState("login")
   const closeMenu = () => setMenuOpen(false);
   const location = useLocation();
 
@@ -21,11 +20,6 @@ const Header = ({ style }) => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-  };
-
-  const abrirModal = (modo) => {
-    setModalMode(modo);     
-    setShowModal(true);    
   };
 
   return (
@@ -44,10 +38,10 @@ const Header = ({ style }) => {
           )}
 
         <div className="header-top-right desktop-only">
-          <button onClick={() => abrirModal("register")} className={`btn ${style}`}>Registrarse</button>
-          <button onClick={() => abrirModal("login")} className={`btn ${style}`}>Iniciar Sesion</button>
+          <Link to="/register" className={`btn ${style}`}>Registrarse</Link>
+          <Link to="/login" className={`btn ${style}`}>Iniciar Sesion</Link>
 
-          <AuthModal isOpen={showModal} onClose={() => setShowModal(false)} mode={modalMode}/>
+
         </div>
         
       </div>
@@ -78,9 +72,8 @@ const Header = ({ style }) => {
         </div>
          
         <div className="nav-auth mobile-only">
-          <button onClick={() => abrirModal("register")} className={`btn ${style}`}>Registrarse</button>
-          <button onClick={() => abrirModal("login")} className={`btn ${style}`}>Iniciar Sesion</button>
-          <AuthModal isOpen={showModal} onClose={() => setShowModal(false)} mode={modalMode}/>
+          <button className={`btn ${style}`}>Registrarse</button>
+          <button className={`btn ${style}`}>Iniciar Sesion</button>
         </div>
       </nav>
       

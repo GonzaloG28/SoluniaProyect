@@ -5,6 +5,8 @@ import SugerenciasForm from './components/SugerenciasForm/SugerenciasForm';
 import Header from './components/Header/Header';
 import BreathingCircle from './components/BreathingCircle/BreathingCircle';
 import CourseSection from './components/CourseSection/CourseSection';
+import Login from './components/RegisterAndLogin/Login';
+import Register from './components/RegisterAndLogin/Register';
 import "./style.css";
 
 
@@ -29,6 +31,8 @@ function App() {
                 />
                 <Route path="/cursos" element={<CourseSection style={style} />} />
                 <Route path="/respiracion" element={<BreathingCircle />} />
+                <Route path='/login' element={<Login/>}/>
+                <Route path='/register' element={<Register/>}/>
             </Routes>
                 </main>
             </div>

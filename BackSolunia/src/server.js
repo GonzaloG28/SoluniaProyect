@@ -2,6 +2,7 @@ import express from "express"
 import envs from "./config/envs.config.js";
 import cors from "cors";
 import openaiRoute from "./routes/openai.js";
+import authRoutes from "./routes/auth.js"
 
 import { connectMongoDB } from "./config/mongoDB.config.js"
 
@@ -18,6 +19,7 @@ app.use(cors());
 
 
 //rutas
+app.use("/api/auth", authRoutes);
 app.use("/api/openai", openaiRoute)
 
 
