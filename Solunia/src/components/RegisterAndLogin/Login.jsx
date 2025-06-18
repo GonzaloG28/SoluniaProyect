@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authContext";
+import "./login.css"
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,10 +22,11 @@ const Login = () => {
   return (
     <div className="auth-page">
       <h2>Iniciar sesión</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="form_registro" onSubmit={handleSubmit}>
         <input
           type="email"
           placeholder="Correo electrónico"
+          className="input_email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -32,6 +34,7 @@ const Login = () => {
         <input
           type="password"
           placeholder="Contraseña"
+          className="input_password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required

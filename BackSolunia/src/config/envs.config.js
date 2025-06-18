@@ -5,5 +5,6 @@ dotenv.config()
 export default {
     PORT: process.env.PORT,
     MONGO_URI: process.env.MONGO_URI,
-    OPENAI_API_KEY: process.env.OPENAI_API_KEY
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    JWT_SECRET: process.env.JWT_SECRET
 }

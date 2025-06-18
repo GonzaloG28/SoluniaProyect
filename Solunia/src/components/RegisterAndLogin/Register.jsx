@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authContext";
+import "./login.css"
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -21,16 +22,18 @@ const Register = () => {
   return (
     <div className="auth-page">
       <h2>Registrarse</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="form_registro" onSubmit={handleSubmit}>
         <input
           type="email"
           placeholder="Correo electrónico"
+          className="input_email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <input
           type="password"
+          className="input_password"
           placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

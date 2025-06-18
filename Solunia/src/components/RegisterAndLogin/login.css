@@ -1,0 +1,10 @@
+
+
+.form_registro{
+    width: 10%0%;
+    input{
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+}
