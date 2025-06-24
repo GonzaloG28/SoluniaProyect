@@ -336,6 +336,12 @@
     text-align: center;
   }
 
+  .user-email {
+  margin-right: 1rem;
+  font-weight: bold;
+  color: white;
+}
+
   .header-top {
     justify-content: center;
   }

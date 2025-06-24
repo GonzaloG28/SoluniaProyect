@@ -8,7 +8,7 @@ const Header = ({ style }) => {
   const [animateBall, setAnimateBall] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
-   const { token, logout } = useContext(AuthContext);
+   const { token, userEmail, logout } = useContext(AuthContext);
   const location = useLocation();
 
 
@@ -40,15 +40,16 @@ const Header = ({ style }) => {
         <div className="header-top-right desktop-only">
 
           {token ? (
-          <>
-            <button onClick={logout} className={`btn ${style}`}>Cerrar sesión</button>
-          </>
-        ) : (
-          <>
-            <Link to="/register" className={`btn ${style}`}>Registrarse</Link>
-          <Link to="/login" className={`btn ${style}`}>Iniciar Sesion</Link>
-          </>
-        )}
+            <>
+              <span className="user-email">{userEmail}</span>
+              <button onClick={logout} className={`btn ${style}`}>Cerrar sesión</button>
+            </>
+          ) : (
+            <>
+              <Link to="/register" className={`btn ${style}`}>Registrarse</Link>
+              <Link to="/login" className={`btn ${style}`}>Iniciar Sesion</Link>
+            </>
+          )}
 
 
         </div>
@@ -82,15 +83,16 @@ const Header = ({ style }) => {
          
         <div className="nav-auth mobile-only">
           {token ? (
-          <>
-            <button onClick={logout} className={`btn ${style}`}>Cerrar sesión</button>
-          </>
-        ) : (
-          <>
-            <Link to="/register" className={`btn ${style}`}>Registrarse</Link>
-          <Link to="/login" className={`btn ${style}`}>Iniciar Sesion</Link>
-          </>
-        )}
+            <>
+              <span className="user-email">{userEmail}</span>
+              <button onClick={logout} className={`btn ${style}`}>Cerrar sesión</button>
+            </>
+          ) : (
+            <>
+              <Link to="/register" className={`btn ${style}`}>Registrarse</Link>
+              <Link to="/login" className={`btn ${style}`}>Iniciar Sesion</Link>
+            </>
+          )}
         </div>
       </nav>
       

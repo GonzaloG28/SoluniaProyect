@@ -15,7 +15,8 @@ const Login = () => {
       await login(email, password);
       navigate("/");
     } catch (error) {
-      alert("Credenciales incorrectas");
+      alert("error al hacer login");
+      console.log(error.message)
     }
   };
 

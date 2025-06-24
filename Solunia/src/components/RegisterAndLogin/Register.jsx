@@ -13,9 +13,10 @@ const Register = () => {
     e.preventDefault();
     try {
       await register(email, password);
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       alert("Error al registrarse");
+      console.log(error.message)
     }
   };
 
