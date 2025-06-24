@@ -46,8 +46,8 @@ const Header = ({ style }) => {
             </>
           ) : (
             <>
-              <Link to="/register" className={`btn ${style}`}>Registrarse</Link>
-              <Link to="/login" className={`btn ${style}`}>Iniciar Sesion</Link>
+              <Link to="/register" onClick={closeMenu} className={`btn ${style}`}>Registrarse</Link>
+              <Link to="/login" onClick={closeMenu} className={`btn ${style}`}>Iniciar Sesion</Link>
             </>
           )}
 
@@ -89,8 +89,8 @@ const Header = ({ style }) => {
             </>
           ) : (
             <>
-              <Link to="/register" className={`btn ${style}`}>Registrarse</Link>
-              <Link to="/login" className={`btn ${style}`}>Iniciar Sesion</Link>
+              <Link to="/register" onClick={closeMenu} className={`btn ${style}`}>Registrarse</Link>
+              <Link to="/login" onClick={closeMenu} className={`btn ${style}`}>Iniciar Sesion</Link>
             </>
           )}
         </div>
